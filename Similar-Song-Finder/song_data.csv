@@ -1,14 +1,14 @@
 Title,Artist,Genre,Year Released,BPM,Length (min:sec),Amount of Words,Happy or Sad,Language,Explicit,Major or Minor Key
 Bohemian Rhapsody,Queen,Rock,1975,72,5:55,372,Sad,English,No,Minor
-Uptown Funk,Mark Ronson ft. Bruno Mars,Pop/Funk,2014,115,4:30,320,Happy,English,No,Major
-Despacito,Luis Fonsi ft. Daddy Yankee,Latin Pop,2017,89,3:47,280,Happy,Spanish,No,Major
+Uptown Funk,Bruno Mars,Pop/Funk,2014,115,4:30,320,Happy,English,No,Major
+Despacito,Luis Fonsi,Latin Pop,2017,89,3:47,280,Happy,Spanish,No,Major
 Smells Like Teen Spirit,Nirvana,Grunge,1991,117,5:01,210,Sad,English,No,Minor
 Shape of You,Ed Sheeran,Pop,2017,96,3:53,310,Happy,English,No,Major
 Hallelujah,Leonard Cohen,Folk,1984,72,4:39,280,Sad,English,No,Minor
 Gangnam Style,PSY,K-Pop,2012,132,4:12,250,Happy,Korean,No,Major
 Lose Yourself,Eminem,Hip-Hop,2002,171,5:26,680,Sad,English,Yes,Minor
 Rolling in the Deep,Adele,Pop/Soul,2010,105,3:48,290,Sad,English,No,Minor
-La Bicicleta,Carlos Vives & Shakira,Latin Pop,2016,94,3:47,320,Happy,Spanish,No,Major
+La Bicicleta,Carlos Vives,Latin Pop,2016,94,3:47,320,Happy,Spanish,No,Major
 Billie Jean,Michael Jackson,Pop,1982,117,4:54,280,Sad,English,No,Minor
 Stairway to Heaven,Led Zeppelin,Rock,1971,82,8:02,320,Sad,English,No,Minor
 Bad Guy,Billie Eilish,Pop,2019,135,3:14,210,Sad,English,No,Minor
@@ -16,11 +16,11 @@ Dance Monkey,Tones and I,Pop,2019,98,3:29,250,Happy,English,No,Major
 Hotel California,Eagles,Rock,1976,75,6:30,320,Sad,English,No,Minor
 Blinding Lights,The Weeknd,Pop,2019,171,3:20,280,Happy,English,No,Major
 Wonderwall,Oasis,Rock,1995,174,4:18,240,Sad,English,No,Major
-Old Town Road,Lil Nas X ft. Billy Ray Cyrus,Country Rap,2019,136,2:37,180,Happy,English,Yes,Major
+Old Town Road,Lil Nas X,Country Rap,2019,136,2:37,180,Happy,English,Yes,Major
 Someone Like You,Adele,Pop/Soul,2011,135,4:45,290,Sad,English,No,Minor
 Thunder,Imagine Dragons,Pop Rock,2017,172,3:07,200,Happy,English,No,Major
 Hey Jude,The Beatles,Rock,1968,72,7:11,320,Happy,English,No,Major
-Shallow,Lady Gaga & Bradley Cooper,Pop,2018,96,3:37,220,Sad,English,No,Minor
+Shallow,Lady Gaga,Pop,2018,96,3:37,220,Sad,English,No,Minor
 Sweet Child o' Mine,Guns N' Roses,Rock,1987,125,5:56,280,Happy,English,No,Major
 Roar,Katy Perry,Pop,2013,180,3:42,300,Happy,English,No,Major
 All of Me,John Legend,Pop,2013,120,4:30,280,Sad,English,No,Minor
@@ -37,8 +37,8 @@ Thinking Out Loud,Ed Sheeran,Pop,2014,79,4:41,280,Happy,English,No,Major
 Stay With Me,Sam Smith,Pop,2014,132,2:52,200,Sad,English,No,Minor
 Can't Stop the Feeling!,Justin Timberlake,Pop,2016,113,3:56,250,Happy,English,No,Major
 Chandelier,Sia,Pop,2014,110,3:36,240,Sad,English,No,Minor
-Lean On,Major Lazer & DJ Snake ft. MØ,EDM,2015,102,2:56,180,Happy,English,No,Major
-Closer,The Chainsmokers ft. Halsey,EDM,2016,95,4:04,280,Sad,English,Yes,Major
+Lean On,Major Lazer,EDM,2015,102,2:56,180,Happy,English,No,Major
+Closer,The Chainsmokers,EDM,2016,95,4:04,280,Sad,English,Yes,Major
 Sorry,Justin Bieber,Pop,2015,100,3:20,200,Sad,English,No,Minor
 Hello,Adele,Pop,2015,79,4:55,280,Sad,English,No,Minor
 Blank Space,Taylor Swift,Pop,2014,96,3:51,280,Sad,English,No,Minor
@@ -53,23 +53,23 @@ Someone You Loved,Lewis Capaldi,Pop,2019,110,3:02,200,Sad,English,No,Minor
 Perfect,Ed Sheeran,Pop,2017,95,4:23,280,Happy,English,No,Major
 Say You Won't Let Go,James Arthur,Pop,2016,134,3:31,240,Sad,English,No,Minor
 Love Yourself,Justin Bieber,Pop,2015,100,3:53,200,Sad,English,No,Minor
-Cheerleader,Felix Jaehn ft. OMI,Pop,2014,120,3:00,180,Happy,English,No,Major
-Work,Rihanna ft. Drake,Pop,2016,92,3:39,200,Sad,English,Yes,Minor
+Cheerleader,Felix Jaehn,Pop,2014,120,3:00,180,Happy,English,No,Major
+Work,Rihanna,Pop,2016,92,3:39,200,Sad,English,Yes,Minor
 Stressed Out,Twenty One Pilots,Pop Rock,2015,170,3:22,240,Sad,English,No,Minor
 Heathens,Twenty One Pilots,Pop Rock,2016,90,3:15,200,Sad,English,No,Minor
-Havana,Camila Cabello ft. Young Thug,Pop,2017,105,3:37,240,Happy,English,No,Major
-Senorita,Shawn Mendes & Camila Cabello,Pop,2019,117,3:10,200,Happy,English,No,Major
+Havana,Camila Cabello,Pop,2017,105,3:37,240,Happy,English,No,Major
+Senorita,Shawn Mendes,Pop,2019,117,3:10,200,Happy,English,No,Major
 I Gotta Feeling,The Black Eyed Peas,Pop,2009,128,4:49,300,Happy,English,No,Major
 Boom Clap,Charli XCX,Pop,2014,86,2:49,180,Happy,English,No,Major
-Cheap Thrills,Sia ft. Sean Paul,Pop,2016,90,3:31,200,Happy,English,No,Major
-Titanium,David Guetta ft. Sia,EDM,2011,126,4:05,240,Sad,English,No,Minor
+Cheap Thrills,Sial,Pop,2016,90,3:31,200,Happy,English,No,Major
+Titanium,David Guetta,EDM,2011,126,4:05,240,Sad,English,No,Minor
 Wake Me Up,Avicii,EDM,2013,124,4:09,280,Happy,English,No,Major
 Levels,Avicii,EDM,2011,126,5:37,180,Happy,English,No,Major
-Lean On,Major Lazer & DJ Snake ft. MØ,EDM,2015,102,2:56,180,Happy,English,No,Major
-Starboy,The Weeknd ft. Daft Punk,Pop,2016,186,3:50,240,Sad,English,Yes,Minor
+Lean On,Major Lazer,EDM,2015,102,2:56,180,Happy,English,No,Major
+Starboy,The Weeknd,Pop,2016,186,3:50,240,Sad,English,Yes,Minor
 The Hills,The Weeknd,Pop,2015,110,4:02,200,Sad,English,Yes,Minor
 Can't Feel My Face,The Weeknd,Pop,2015,108,3:35,200,Happy,English,No,Major
-Uptown Funk,Mark Ronson ft. Bruno Mars,Pop/Funk,2014,115,4:30,320,Happy,English,No,Major
+Uptown Funk,Bruno Mars,Pop/Funk,2014,115,4:30,320,Happy,English,No,Major
 24K Magic,Bruno Mars,Pop/Funk,2016,106,3:46,240,Happy,English,No,Major
 Just the Way You Are,Bruno Mars,Pop,2010,109,3:40,240,Happy,English,No,Major
 Locked Out of Heaven,Bruno Mars,Pop,2012,144,3:53,240,Happy,English,No,Major
@@ -77,7 +77,7 @@ When I Was Your Man,Bruno Mars,Pop,2013,73,3:33,240,Sad,English,No,Minor
 Grenade,Bruno Mars,Pop,2010,120,3:42,240,Sad,English,No,Minor
 Treasure,Bruno Mars,Pop/Funk,2012,116,2:58,200,Happy,English,No,Major
 That's What I Like,Bruno Mars,Pop,2016,148,3:26,240,Happy,English,No,Major
-Finesse,Bruno Mars ft. Cardi B,Pop/Funk,2018,106,3:37,240,Happy,English,No,Major
+Finesse,Bruno Mars,Pop/Funk,2018,106,3:37,240,Happy,English,No,Major
 Better Than Gold,Justin Hawkes,Country/Drum and Bass,2022,110,5:20,70,Happy,English,No,Major
 Calabria 2007,Enur,Pop,2007,126,3:53,160,Happy,Portuguese,No,Major
 Noel's Lament,Kholby Wardell,Broadway,2021,87,5:00,350,Sad,English,Yes,Minor
