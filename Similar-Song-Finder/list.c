@@ -155,7 +155,7 @@ void loadSongs(FILE* infile, Node** plist) {
 
     char line[200] = "";
     Record newSong;
-
+    fgets(line, 200, infile);
 
     while (fgets(line, 200, infile) != NULL) {
 
