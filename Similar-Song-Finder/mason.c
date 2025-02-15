@@ -3,7 +3,7 @@
 Node* getinitialsong(Node* pHead) {
     if (pHead == NULL) {
         printf("No songs\n");
-        return;
+        return NULL;
     }
 
     char song[100];
@@ -21,7 +21,7 @@ Node* getinitialsong(Node* pHead) {
 
     if (pCur == pHead && strcmp(pCur->data.title, song) != 0) {
         printf("Song not found.\n");
-        return;
+        return NULL;
     }
     return pCur;
 }
