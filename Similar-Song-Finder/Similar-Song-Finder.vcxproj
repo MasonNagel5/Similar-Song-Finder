@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="list.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="mason.c" />
     <ClCompile Include="similar_song_finder.c" />
   </ItemGroup>
   <ItemGroup>
