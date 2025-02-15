@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="list.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="similar_song_finder.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="list.h" />
     <ClInclude Include="similar_song_finder.h" />
   </ItemGroup>
   <ItemGroup>

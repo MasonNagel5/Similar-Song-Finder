@@ -21,9 +21,15 @@
     <ClCompile Include="similar_song_finder.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="similar_song_finder.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="list.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
