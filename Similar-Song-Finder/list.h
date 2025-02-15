@@ -24,9 +24,9 @@ typedef struct record {
     int bpm;
     Duration length;
     int amount_of_words;
-    int is_happy;
+    char is_happy[10];
     char language[MAX_NAME_LEN];
-    int is_major;
+    char is_major[10];
 } Record;
 
 typedef struct node {
@@ -189,5 +189,9 @@ int remove_song(Node** pList, char* song_name);
  *
 */
 void print_list_p(Node* pList);
+
+
+
+void loadSongs(FILE* infile, Node** plist);
 
 #endif

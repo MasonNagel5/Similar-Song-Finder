@@ -31,9 +31,9 @@ void set_node_data(Node* pList, Record new_data) {
     pList->data.bpm = new_data.bpm;
     pList->data.length = new_data.length;
     pList->data.amount_of_words = new_data.amount_of_words;
-    pList->data.is_happy = new_data.is_happy;
+    strcpy(pList->data.is_happy, new_data.is_happy);
     strcpy(pList->data.language, new_data.language);
-    pList->data.is_major = new_data.is_major;
+    strcpy(pList->data.is_major, new_data.is_major);
 }
 int insert_front(Node** pList, Record new_data) {
     Node* pMem = create_node(new_data);
@@ -148,4 +148,41 @@ void print_list_p(Node* pList) {
         printf("[%p <-- %p --> %p]\n", pList->pPrev, pList, pList->pNext);
         print_list_p(pList->pNext);
     }
+}
+
+
+void loadSongs(FILE* infile, Node** plist) {
+
+    char line[200] = "";
+    Record newSong;
+
+
+    while (fgets(line, 200, infile) != NULL) {
+
+        //being caused because it goes through one last time 
+        if (line[0] != '\n') {
+
+            
+            
+            strcpy(newSong.title, strtok(line, ","));
+            strcpy(newSong.artist, strtok(NULL, ","));
+            strcpy(newSong.genre[0], strtok(NULL, ","));
+            newSong.year = atoi(strtok(NULL, ","));
+            newSong.bpm = atoi(strtok(NULL, ","));
+            newSong.length.minutes = atoi(strtok(NULL, ":"));
+            newSong.length.seconds = atoi(strtok(NULL, ","));
+            newSong.amount_of_words = atoi(strtok(NULL, ","));
+            strcpy(newSong.is_happy, strtok(NULL, ","));
+            strcpy(newSong.language, strtok(NULL, ","));
+            strcpy(newSong.is_major, strtok(NULL, ","));
+
+
+            insert_front(plist, newSong);
+
+
+
+            //printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[0], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
+        }
+    }
+    return;
 }
