@@ -34,6 +34,7 @@ void set_node_data(Node* pList, Record new_data) {
     pList->data.is_happy = new_data.is_happy;
     strcpy(pList->data.language, new_data.language);
     pList->data.is_major = new_data.is_major;
+    pList->data.similarity_score = new_data.similarity_score;
 }
 int insert_front(Node** pList, Record new_data) {
     Node* pMem = create_node(new_data);
@@ -136,7 +137,7 @@ void print_list(Node *pList) {
         putchar('\n');
     } else {
         Record newSong = pList->data;
-        printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[1], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
+        printf("%s, %s, %s, %d, %d, %d:%d, %d, %d, %s, %d, %d\n", newSong.title, newSong.artist, newSong.genre[0], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major, newSong.similarity_score);
         print_list(pList->pNext);
     }
 }
@@ -188,7 +189,7 @@ void loadSongs(FILE* infile, Node** plist) {
                 newSong.is_happy = 1;
             }
             else {
-                newSong.is_happy == 0;
+                newSong.is_happy = 0;
             }
             
             strcpy(newSong.language, strtok(NULL, ","));
@@ -199,7 +200,7 @@ void loadSongs(FILE* infile, Node** plist) {
                 newSong.is_major = 1;
             }
             else {
-                newSong.is_major == 0;
+                newSong.is_major = 0;
             }
             
 

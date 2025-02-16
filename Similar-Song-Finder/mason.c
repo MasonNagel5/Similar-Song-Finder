@@ -13,6 +13,10 @@ Node* getinitialsong(Node* pHead) {
 
     Node* pCur = pHead;
     do {
+        if (pCur == NULL) {
+            printf("That song does not exist! Please try another.\n");
+            return NULL;
+        }
         if (strcmp(pCur->data.title, song) == 0) {
             break;
         }

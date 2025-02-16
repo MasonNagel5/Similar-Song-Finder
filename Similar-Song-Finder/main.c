@@ -18,9 +18,10 @@ int main(void) {
 
 	traverse_through_available(&phead);
 	
-	makePlaylist(&phead);
+	phead = makePlaylist(&phead);
 
-
+	//print_list_p(phead);
+	print_list(phead);
 
 
 
