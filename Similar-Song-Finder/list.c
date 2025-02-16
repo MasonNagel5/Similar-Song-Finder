@@ -153,12 +153,13 @@ void print_list_p(Node* pList) {
 
 void loadSongs(FILE* infile, Node** plist) {
 
-    char line[200] = "";
+    char line[200] = "", small_line[50] = "";
+    
     Record newSong;
     fgets(line, 200, infile);
 
     while (fgets(line, 200, infile) != NULL) {
-
+        int multi_genre = 0;
         //being caused because it goes through one last time 
         if (line[0] != '\n') {
 
@@ -166,7 +167,13 @@ void loadSongs(FILE* infile, Node** plist) {
             
             strcpy(newSong.title, strtok(line, ","));
             strcpy(newSong.artist, strtok(NULL, ","));
-            strcpy(newSong.genre[0], strtok(NULL, ","));
+            strcpy(small_line, strtok(NULL, ","));
+
+            for (int i = 0; small_line[i] != '\0'; i++) {
+                if (small_line[i] == '/') {
+                    multi_genre = 1;
+                }
+            }
             newSong.year = atoi(strtok(NULL, ","));
             newSong.bpm = atoi(strtok(NULL, ","));
             newSong.length.minutes = atoi(strtok(NULL, ":"));
@@ -176,12 +183,25 @@ void loadSongs(FILE* infile, Node** plist) {
             strcpy(newSong.language, strtok(NULL, ","));
             strcpy(newSong.is_major, strtok(NULL, ","));
 
+            //dealing with genre now
+            if (multi_genre == 0) {
+                strcpy(newSong.genre[0], small_line);
+                strcpy(newSong.genre[1], small_line);
+
+            }
+            else {
+                strcpy(newSong.genre[0], strtok(small_line, "/"));
+                strcpy(newSong.genre[1], strtok(NULL, "/"));
+            }
+            
+
+
 
             insert_front(plist, newSong);
 
 
 
-            //printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[0], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
+            printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[1], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
         }
     }
     return;
