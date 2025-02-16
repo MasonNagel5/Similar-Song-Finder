@@ -13,9 +13,9 @@ A simple music sorter, based on your preferences in C! Uses a small test batch o
 - [How to run](#how-to-run)
   - Programs/Tools needed
   - How to run
-- [The Program Running]()
+- [The Program Running](#the-program-running)
 - [Program Layout](#program-layout)
-  - What each file does/is reponsible for
+  - What each file does/is responsible for
 - [Future Improvements](#future-improvements)
   - Ideas from ourselves
   - Ideas from mentors
@@ -102,3 +102,5 @@ While working on our project, we talked to a mentor and they gave us some ideas 
     - then make a playlist based on those preferenes/patterns for the user
 - **Expanded Music Catalog**
   - The most obvious weak point of this program right now is the small music catalog of 82 songs. It would be really cool to implement some API usage, where we can get songs from some service maybe filtered. One thing the mentor mentioned is using the Spotify API, which would be incredibly cool! Complex, and probably terrible in C, but cool!
+- **Integration with current services**
+  - This goes along with the Spotify API point, but since it may be unintuitive for users to have to run a separate program to get the similar songs they want, it would be cool to find a way to integrate it into existing services or programs in a much **faster, cleaner, and seamless** way.
