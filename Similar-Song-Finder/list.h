@@ -27,6 +27,7 @@ typedef struct record {
     char is_happy[10];
     char language[MAX_NAME_LEN];
     char is_major[10];
+    int similarity_score;
 } Record;
 
 typedef struct node {
