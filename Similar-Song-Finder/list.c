@@ -206,3 +206,36 @@ void loadSongs(FILE* infile, Node** plist) {
     }
     return;
 }
+void deleteNode(Node** pList, int data) {
+    if (*pList == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+
+    Node* pTemp = *pList;
+
+    // Find the node to delete
+    while (pTemp && pTemp->data.title != data) {
+        pTemp = pTemp->pNext;
+    }
+
+    if (!pTemp) {
+        printf("Node with value %d not found.\n", data);
+        return;
+    }
+
+    // Adjust pointers
+    if (pTemp->pPrev) {
+        pTemp->pPrev->pNext = pTemp->pNext;
+    }
+    else {
+        *pList = pTemp->pNext; // Update head if deleting the first node
+    }
+
+    if (pTemp->pNext) {
+        pTemp->pNext->pPrev = pTemp->pPrev;
+    }
+
+    free(pTemp);
+  
+}
