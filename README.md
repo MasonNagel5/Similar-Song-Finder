@@ -58,19 +58,19 @@ Here are some screenshots
 
 > The Welcome Screen!
 
-![Welcome Screen](./Similar-Song-Finder/resources/welcome.png)
+![Welcome Screen](./resources/welcome.png)
 
 > The Main Menu! You have 3 options... choose wisely...
 
-![Main Menu](./Similar-Song-Finder/resources/main_menu.png)
+![Main Menu](./resources/main_menu.png)
 
 > Example input getting for choosing preferences
 
-![Example Preference Get](./Similar-Song-Finder/resources/pref_example.png)
+![Example Preference Get](./resources/pref_example.png)
 
 > Example Output for sorted songs, with the lowest on the list being least similar
 
-![Example Sorted Output](./Similar-Song-Finder/resources/example_sorted.png)
+![Example Sorted Output](./resources/example_sorted.png)
 
 ## Program Layout
 
