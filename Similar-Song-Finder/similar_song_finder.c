@@ -1,20 +1,20 @@
 #include "similar_song_finder.h"
 
 Node* getinitialsong(Node* pHead) {
-    if (pHead == NULL) {
-        printf("No songs\n");
-        return NULL;
-    }
+    if (pHead == NULL) { return NULL; }
 
     char song[100];
-    printf("Enter song title to start playing: ");
+    simple_text_screen("Enter song title to start playing:");
+    printf("\n> ");
     fgets(song, sizeof(song), stdin);
     song[strcspn(song, "\n")] = '\0'; // Remove newline char
 
     Node* pCur = pHead;
     do {
         if (pCur == NULL) {
-            printf("That song does not exist! Please try another.\n");
+            putchar('\n');
+            simple_text_screen("!! That song does not exist! Please try another !!");
+            enter_wait();
             return NULL;
         }
         if (strcmp(pCur->data.title, song) == 0) {
@@ -29,48 +29,56 @@ Node* getinitialsong(Node* pHead) {
     }
     return pCur;
 }
-void getValidInput(char* choice, const char* validChars) {
-    int valid;
-    do {
-        scanf(" %c", choice);
-        valid = strchr(validChars, *choice) != NULL;  // Check if input is in validChars
-        if (!valid) {
-            printf("Invalid input. Enter one of these options: %s: ", validChars);
-        }
-    } while (!valid);
-}
 Preferences getPreferences() {
     char choice;
     Preferences pref;
 
-
-    printf("Do you prefer to hear songs from this artist? (y/n)\n");
-    getValidInput(&choice, "yn");
+    clear_scr();
+    simple_text_screen("Do you prefer to hear songs from this artist?");
+    get_valid_char("(y/n): ", & choice, "yn");
     pref.artist = (choice == 'y');
 
-    printf("Do you prefer songs of a similar genre? (y/n)\n");
-    getValidInput(&choice, "yn");
+    clear_scr();
+    simple_text_screen("Do you prefer songs of a similar genre?");
+    get_valid_char("(y/n): ", &choice, "yn");
     pref.genre = (choice == 'y');
 
-    printf("BPM is the beats per minute. Do you prefer a FAST BPM, Medium BPM, or SLOW BPM? (f/m/s)\n");
-    getValidInput(&choice, "fms");
+    clear_scr();
+    char bpm_text[150] = "BPM is the beats per minute. Which do you prefer?\n  - FAST BPM (f)\n  - Medium BPM (m)\n  - SLOW BPM (s)";
+    simple_text_screen(bpm_text);
+    get_valid_char("(f/m/s): ", &choice, "fms");
     pref.bpm = (choice == 'f') ? FAST : (choice == 'm') ? MEDIUM : SLOW;
 
-    printf("Do you prefer Happy or Sad Music? (h/s)\n");
-    getValidInput(&choice, "hs");
+    clear_scr();
+    simple_text_screen("Do you prefer Happy (h) or Sad (s) Music?");
+    get_valid_char("(h/s): ", &choice, "hs");
     pref.is_happy = (choice == 'h');
 
-    printf("Do you prefer the current song language? (y/n)\n");
-    getValidInput(&choice, "yn");
+    clear_scr();
+    simple_text_screen("Do you prefer the current song language?");
+    get_valid_char("(y/n): ", &choice, "yn");
     pref.language = (choice == 'y');
 
     return pref;
 }
 
 Node* traverse_through_available(Node** pHead) {
-	Node* chosen_song = NULL;
+    clear_scr();
+
+    // first, check for no songs in the list
+    if (pHead == NULL || *pHead == NULL || get_list_length(*pHead) == 0) {
+        char err_msg[80] = "You have no songs loaded!\n \nPlease check your `song_data.csv` file and retry.";
+        clear_scr();
+        simple_text_screen(err_msg);
+        enter_wait();
+        return NULL;
+    }
+    
+    // then, try getting initial song until one is found
+    Node* chosen_song = NULL;
 	while (chosen_song == NULL) {
 		chosen_song = getinitialsong(*pHead);
+        clear_scr();
 	}
 	Node* pCur = *pHead;
 	insert_front(pHead, chosen_song->data);

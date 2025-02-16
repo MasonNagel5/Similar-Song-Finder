@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "list.h"
+#include "ui.h"
 
 typedef enum bpm_range {
     FAST,  // >140
@@ -24,6 +25,5 @@ Node* getinitialsong(Node* pHead);
 Node* traverse_through_available(Node** pHead);
 void score_record(Node *pHead, Node *chosen_song, Preferences priority);
 Preferences getPreferences();
-void getValidInput(char* choice, const char* validChars);
 
 #endif
