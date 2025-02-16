@@ -24,9 +24,9 @@ typedef struct record {
     int bpm;
     Duration length;
     int amount_of_words;
-    char is_happy[10];
+    int is_happy;
     char language[MAX_NAME_LEN];
-    char is_major[10];
+    int is_major;
     int similarity_score;
 } Record;
 

@@ -31,9 +31,9 @@ void set_node_data(Node* pList, Record new_data) {
     pList->data.bpm = new_data.bpm;
     pList->data.length = new_data.length;
     pList->data.amount_of_words = new_data.amount_of_words;
-    strcpy(pList->data.is_happy, new_data.is_happy);
+    pList->data.is_happy = new_data.is_happy;
     strcpy(pList->data.language, new_data.language);
-    strcpy(pList->data.is_major, new_data.is_major);
+    pList->data.is_major = new_data.is_major;
 }
 int insert_front(Node** pList, Record new_data) {
     Node* pMem = create_node(new_data);
@@ -154,7 +154,7 @@ void print_list_p(Node* pList) {
 
 void loadSongs(FILE* infile, Node** plist) {
 
-    char line[200] = "", small_line[50] = "";
+    char line[200] = "", small_line[50] = "", small_line2[10];
     
     Record newSong;
     fgets(line, 200, infile);
@@ -180,9 +180,28 @@ void loadSongs(FILE* infile, Node** plist) {
             newSong.length.minutes = atoi(strtok(NULL, ":"));
             newSong.length.seconds = atoi(strtok(NULL, ","));
             newSong.amount_of_words = atoi(strtok(NULL, ","));
-            strcpy(newSong.is_happy, strtok(NULL, ","));
+
+
+            strcpy(small_line2, strtok(NULL, ","));
+
+            if (strcmp(small_line2, "Happy") == 0) {
+                newSong.is_happy = 1;
+            }
+            else {
+                newSong.is_happy == 0;
+            }
+            
             strcpy(newSong.language, strtok(NULL, ","));
-            strcpy(newSong.is_major, strtok(NULL, ","));
+
+            strcpy(small_line2, strtok(NULL, ","));
+
+            if (strcmp(small_line2, "Major") == 0) {
+                newSong.is_major = 1;
+            }
+            else {
+                newSong.is_major == 0;
+            }
+            
 
             //dealing with genre now
             if (multi_genre == 0) {
