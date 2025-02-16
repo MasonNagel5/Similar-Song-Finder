@@ -195,4 +195,5 @@ void print_list_p(Node* pList);
 
 void loadSongs(FILE* infile, Node** plist);
 
+void deleteNode(Node** pList, Record data);
 #endif

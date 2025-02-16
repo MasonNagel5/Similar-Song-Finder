@@ -206,7 +206,7 @@ void loadSongs(FILE* infile, Node** plist) {
     }
     return;
 }
-void deleteNode(Node** pList, int data) {
+void deleteNode(Node** pList, Record data) {
     if (*pList == NULL) {
         printf("List is empty.\n");
         return;
@@ -215,7 +215,7 @@ void deleteNode(Node** pList, int data) {
     Node* pTemp = *pList;
 
     // Find the node to delete
-    while (pTemp && pTemp->data.title != data) {
+    while (pTemp && strcmp(pTemp->data.title,data.title) != 0) {
         pTemp = pTemp->pNext;
     }
 
