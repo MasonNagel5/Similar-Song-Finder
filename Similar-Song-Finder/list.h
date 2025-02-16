@@ -97,17 +97,6 @@ int insert_front(Node** pList, Record new_data);
 */
 void destroy_list(Node** pList);
 
-/*
- * Function: print_list
- * --------------------
- *   Prints the raw list nicely, should not be used for UI
- *
- *   Parameters:
- *   - *pList: pointer to list to print
- *
-*/
-void print_list(Node* pList);
-
 /* ----- Custom Functions ----- */
 
 /*
@@ -179,6 +168,8 @@ Node* get_nth_song_of_artist(Node* pList, char* artist, int n);
  *   - 1 for found and removed, 0 for not found
 */
 int remove_song(Node** pList, char* song_name);
+
+void print_list(Node *pList);
 
 /*
  * Function: print_list_p

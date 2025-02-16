@@ -6,7 +6,7 @@
 #include <string.h>
 #include "list.h"
 Node* getinitialsong(Node* pHead);
-void traverse_through_available(Node** pHead, Node** pPlaylist);
+void traverse_through_available(Node** pHead);
 
 
 

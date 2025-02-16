@@ -65,15 +65,6 @@ void destroy_list(Node** pList) {
         *pList = NULL;
     }
 }
-void print_list(Node* pList) {
-    if (pList == NULL) {
-        printf("-->\n");
-    }
-    else {
-        printf("--> \"%s\" by \"%s\" ", pList->data.title, pList->data.artist);
-        print_list(pList->pNext);
-    }
-}
 
 /* ----- Custom Functions ----- */
 
@@ -138,6 +129,16 @@ int remove_song(Node** pList, char* song_name) {
 
     // recursive call
     return remove_song(&(*pList)->pNext, song_name);
+}
+
+void print_list(Node *pList) {
+    if (pList == NULL) {
+        putchar('\n');
+    } else {
+        Record newSong = pList->data;
+        printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[1], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
+        print_list(pList->pNext);
+    }
 }
 
 void print_list_p(Node* pList) {

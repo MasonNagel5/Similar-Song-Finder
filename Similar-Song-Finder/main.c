@@ -15,13 +15,25 @@ int main(void) {
 
 	fclose(infile);
 
-	Node* pPlaylist = NULL;
-
-	traverse_through_available(&phead, &pPlaylist);
+	traverse_through_available(&phead);
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
