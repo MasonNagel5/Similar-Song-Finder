@@ -24,5 +24,6 @@ Node* getinitialsong(Node* pHead);
 void traverse_through_available(Node** pHead);
 void score_record(Node *pHead, Node *chosen_song, Preferences priority);
 Preferences getPreferences();
+void getValidInput(char* choice, const char* validChars);
 
 #endif
