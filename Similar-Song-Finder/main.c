@@ -15,7 +15,13 @@ int main(void) {
 
 	fclose(infile);
 
+
+	makePlaylist(&phead);
+
+
 	traverse_through_available(&phead);
+
+
 
 
 

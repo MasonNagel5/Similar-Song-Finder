@@ -187,7 +187,7 @@ void loadSongs(FILE* infile, Node** plist) {
             //dealing with genre now
             if (multi_genre == 0) {
                 strcpy(newSong.genre[0], small_line);
-                strcpy(newSong.genre[1], small_line);
+                strcpy(newSong.genre[1], "none");
 
             }
             else {
@@ -195,14 +195,14 @@ void loadSongs(FILE* infile, Node** plist) {
                 strcpy(newSong.genre[1], strtok(NULL, "/"));
             }
             
-
+            newSong.similarity_score = 0;
 
 
             insert_front(plist, newSong);
 
 
 
-            printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[1], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
+            //printf("%s, %s, %s, %d, %d, %d:%d, %d, %s, %s, %s\n", newSong.title, newSong.artist, newSong.genre[1], newSong.year, newSong.bpm, newSong.length.minutes, newSong.length.seconds, newSong.amount_of_words, newSong.is_happy, newSong.language, newSong.is_major);
         }
     }
     return;
@@ -239,4 +239,73 @@ void deleteNode(Node** pList, Record data) {
 
     free(pTemp);
   
+}
+
+Node * makePlaylist(Node** plist) {
+    Node* pcurrent = *plist, * newNode;
+    int num_of_songs = 0, success = 0;
+
+    init_list(&newNode);
+
+    //finds num of songs by counting while itereating through linked list
+    while(pcurrent != NULL) {
+        num_of_songs += 1;
+        pcurrent = pcurrent->pNext;
+    }
+
+
+
+
+    pcurrent = *plist;
+
+    for (int i = 0; i < num_of_songs; i++) {
+        success = insertInOrder(&newNode, pcurrent->data);
+        pcurrent = pcurrent->pNext;
+    }
+
+    //if insert in order works return the new order else return old order
+    if (success == 1) {
+        return newNode;
+    }
+    else {
+        return *plist;
+    }
+}
+
+
+
+int insertInOrder(Node** pList, Record newData) {
+
+    Node* pcurrent = *pList, * pPrev = NULL, * pMem = create_node(newData);
+    int success = 0;
+
+    if (pMem != NULL) {
+        success = 1;
+
+        if (*pList == NULL) {
+            // list is empty add it on front
+            *pList = pMem;
+            return success;
+        }
+
+        
+        while (pcurrent != NULL && pcurrent->data.similarity_score > newData.similarity_score) {
+            pPrev = pcurrent;
+            pcurrent = pcurrent->pNext;
+        }
+
+
+        //inserting front
+        if (pPrev == NULL) {
+            pMem->pNext = *pList;
+            *pList = pMem;
+        }
+        else {
+            // inserting somewhere in middle or at end of non empty list
+            pMem->pNext = pcurrent;
+            pPrev->pNext = pMem;
+        }
+    }
+
+    return success;
 }
