@@ -25,3 +25,67 @@ Node* getinitialsong(Node* pHead) {
     }
     return pCur;
 }
+
+Preferences getPreferences() {
+    printf("Do prefer to hear songs from this artist y/n?\n");
+    char choice;
+    Preferences pref;
+    scanf("%c", &choice);
+    if (choice == 'y') {
+        pref.artist = 1;
+    }
+    if (choice == 'n') {
+        pref.artist = 0;
+    }
+    else {
+        printf("Invalid input, enter y/n.\n");
+    }
+    printf("Do you prefer songs of a similar genre?\n");
+    scanf("%c", &choice);
+    if (choice == 'y') {
+        pref.genre = 1;
+    }
+    if (choice == 'n') {
+        pref.genre = 0;
+    }
+    else {
+        printf("Invalid input, enter y/n.\n");
+    }
+    printf("BPM is the beats per minute. Do you prefer a FAST BPM, Medium BPM, or SLOW BPM? Enter f, m, or s.\n");
+    scanf("%c", &choice);
+    if (choice == 'f') {
+        pref.bpm = FAST;
+    }
+    if (choice == 'm') {
+        pref.bpm = MEDIUM;
+    }
+    if (choice == 's') {
+        pref.bpm = SLOW;
+    }
+    else {
+        printf("Invalid input, enter f, m, or s.\n");
+    }
+    printf("Do you prefer Happy or Sad Music? Enter h or s.\n");
+    scanf("%c", &choice);
+    if (choice == 'h') {
+        pref.is_happy = 1;
+    }
+    if (choice == 's') {
+        pref.is_happy = 0;
+    }
+    else {
+        printf("Invalid input, enter y/n.\n");
+    }
+    printf("Do you prefer the current song language? y/n?\n");
+    scanf("%c", &choice);
+    if (choice == 'y') {
+        pref.language = 1;
+    }
+    if (choice == 'n') {
+        pref.language = 0;
+    }
+    else {
+        printf("Invalid input, enter y/n.\n");
+    }
+    return pref;
+}

@@ -5,6 +5,8 @@ void traverse_through_available(Node** pHead) {
 	printf("Chosen song p: %p\n", chosen_song);
 	Node* pCur = *pHead;
 	insert_front(pHead, chosen_song->data);
+	Preferences User_Preferences;
+	User_Preferences = getPreferences();
 	while (pCur != NULL) {
 		if (strcmp(pCur->data.title, chosen_song->data.title) == 0) {
 			deleteNode(pHead, pCur->data);
@@ -15,8 +17,8 @@ void traverse_through_available(Node** pHead) {
 	pCur = *pHead;
 
 	while (pCur != NULL) {
-		// score songs here
-		// score_record(pCur, chosen_song)
+	
+		score_record(pCur, chosen_song, User_Preferences);
 
 		pCur = pCur->pNext;
 	}

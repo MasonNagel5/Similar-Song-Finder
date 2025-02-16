@@ -20,7 +20,7 @@ int main(void) {
 
 
 	traverse_through_available(&phead);
-
+	
 
 
 

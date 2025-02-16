@@ -23,6 +23,6 @@ typedef struct preferences {
 Node* getinitialsong(Node* pHead);
 void traverse_through_available(Node** pHead);
 void score_record(Node *pHead, Node *chosen_song, Preferences priority);
-
+Preferences getPreferences();
 
 #endif
