@@ -24,12 +24,6 @@
     <ClCompile Include="list.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mason.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="logan.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="similar_song_finder.h">
