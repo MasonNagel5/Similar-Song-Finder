@@ -188,7 +188,7 @@ void loadSongs(FILE* infile, Node** plist);
 
 void deleteNode(Node** pList, Record data);
 
-Node* makePlaylist(Node** plist);
+Node* makePlaylist(Node** plist, Node *chosen_song);
 
 int insertInOrder(Node** pList, Record newData);
 

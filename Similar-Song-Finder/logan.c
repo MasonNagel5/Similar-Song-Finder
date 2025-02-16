@@ -1,6 +1,6 @@
 #include "similar_song_finder.h"
 
-void traverse_through_available(Node** pHead) {
+Node *traverse_through_available(Node** pHead) {
 	Node* chosen_song = NULL;
 	while (chosen_song == NULL) {
 		chosen_song = getinitialsong(*pHead);
@@ -25,6 +25,8 @@ void traverse_through_available(Node** pHead) {
 
 		pCur = pCur->pNext;
 	}
+
+	return chosen_song;
 }
 
 void score_record(Node *pHead, Node *chosen_song, Preferences preference) {

@@ -261,7 +261,7 @@ void deleteNode(Node** pList, Record data) {
   
 }
 
-Node * makePlaylist(Node** plist) {
+Node * makePlaylist(Node** plist, Node *chosen_song) {
     Node* pcurrent = *plist, * newNode;
     int num_of_songs = 0, success = 0;
 
@@ -279,9 +279,13 @@ Node * makePlaylist(Node** plist) {
     pcurrent = *plist;
 
     for (int i = 0; i < num_of_songs; i++) {
-        success = insertInOrder(&newNode, pcurrent->data);
+        if (strcmp(chosen_song->data.title, pcurrent->data.title) != 0) {
+            success = insertInOrder(&newNode, pcurrent->data);
+        }
         pcurrent = pcurrent->pNext;
     }
+
+    success = insert_front(&newNode, chosen_song->data);
 
     //if insert in order works return the new order else return old order
     if (success == 1) {

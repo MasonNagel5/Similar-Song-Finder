@@ -15,10 +15,9 @@ int main(void) {
 
 	fclose(infile);
 
-
-	traverse_through_available(&phead);
+	Node *chosen_song = traverse_through_available(&phead);
 	
-	phead = makePlaylist(&phead);
+	phead = makePlaylist(&phead, chosen_song);
 
 	//print_list_p(phead);
 	print_list(phead);
