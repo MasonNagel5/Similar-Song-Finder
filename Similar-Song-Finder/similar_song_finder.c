@@ -72,7 +72,6 @@ Node* traverse_through_available(Node** pHead) {
 	while (chosen_song == NULL) {
 		chosen_song = getinitialsong(*pHead);
 	}
-	printf("Chosen song p: %p\n", chosen_song);
 	Node* pCur = *pHead;
 	insert_front(pHead, chosen_song->data);
 	Preferences User_Preferences;
